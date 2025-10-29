@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamS - E-Commerce Elektronik & Aksesoris</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: white;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background: #1E1B4B;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: lightgreen;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        .cta {
+            background: blue;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cta:hover {
+            background: darkblue;
+            transform: scale(1.05);
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 80px;
+            background: #3B82F6;
+        }
+
+        .hero-content {
+            width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 2.6rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .hero-content p {
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            background: blue;
+            border: none;
+            padding: 12px 28px;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: darkblue;
+            transform: translateY(-3px);
+        }
+
+        .hero-image img {
+            width: 480px;
+            border-radius: 20px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 90px 80px;
+            gap: 50px;
+            background: #6D28D9;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .about-text p {
+            color: white;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .about-image img {
+            width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .produk {
+            text-align: center;
+            padding: 90px 80px;
+            background: #3B82F6;
+        }
+
+        .produk h2 {
+            font-size: 2rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .produk p {
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .produk-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .produk-card {
+            width: 320px;
+            background: #00eeff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .produk-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .produk-card img {
+            width: 100%;
+            height: 220px;
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
+        }
+
+        .produk-card h3 {
+            margin: 20px 0 10px;
+        }
+
+        .produk-card p {
+            color: #555;
+            font-size: 0.95rem;
+            padding: 0 20px 20px;
+        }
+
+        .layanan {
+            text-align: center;
+            padding: 90px 80px;
+            background: #6D28D9;
+        }
+
+        .layanan h2 {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #222;
+        }
+
+        .layanan-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .layanan-card {
+            background: rgb(0, 110, 255);
+            border-radius: 15px;
+            width: 340px;
+            padding: 30px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .layanan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .layanan-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .layanan-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .kontak {
+            text-align: center;
+            padding: 90px 80px;
+            background: #6200ff;
+        }
+
+        .kontak h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .kontak p {
+            color: white;
+        }
+
+        .kontak-info p {
+            color: white;
+        }
+
+        .kontak-info {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 40px;
+        }
+
+        .kontak-info div {
+            background: #0066ff;
+            padding: 25px 35px;
+            border-radius: 12px;
+            width: 250px;
+            box-shadow: 0 4px 10px rgb(255, 255, 255);
+            transition: transform 0.3s;
+        }
+
+        .kontak-info div:hover {
+            transform: translateY(-5px);
+        }
+
+        .kontak-info h4 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1E1B4B;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .artikel-section {
+            padding: 80px 60px;
+            background: #008cff;
+        }
+
+        .artikel-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 40px;
+        }
+
+        .artikel-left {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .artikel-left h2 {
+            font-size: 2rem;
+            color: #222;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .artikel-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .artikel-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .artikel-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .artikel-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .artikel-text {
+            padding: 20px;
+        }
+
+        .artikel-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .artikel-text p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .artikel-text a {
+            color: blue;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .artikel-text a:hover {
+            color: darkblue;
+        }
+
+        .artikel-aside {
+            flex: 1;
+            background: #fff9e6;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .artikel-aside:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .artikel-aside h3 {
+            font-size: 1.3rem;
+            color: #222;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .artikel-aside ul {
+            list-style: none;
+        }
+
+        .artikel-aside li {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 992px) {
+            .artikel-container {
+                flex-direction: column;
+            }
+
+            .artikel-aside {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .artikel-grid {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 25px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            nav a {
+                margin: 8px 10px;
+                font-size: 0.95rem;
+            }
+
+            .cta {
+                margin-top: 10px;
+                align-self: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 20px;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-image img {
+                width: 90%;
+                margin-top: 25px;
+            }
+
+            .about {
+                flex-direction: column;
+                padding: 60px 25px;
+                text-align: center;
+            }
+
+            .about-image img {
+                width: 90%;
+            }
+
+            .produk {
+                padding: 60px 25px;
+            }
+
+            .produk-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+
+            .produk-card {
+                width: 90%;
+            }
+
+            .layanan {
+                padding: 60px 25px;
+            }
+
+            .layanan-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+
+            .layanan-card {
+                width: 90%;
+            }
+
+            .artikel-section {
+                padding: 60px 25px;
+            }
+
+            .artikel-container {
+                flex-direction: column;
+            }
+
+            .artikel-aside {
+                width: 100%;
+            }
+
+            .kontak {
+                padding: 60px 25px;
+            }
+
+            .kontak-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+
+            .kontak-info div {
+                width: 90%;
+            }
+
+            footer {
+                font-size: 0.8rem;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 10px 15px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .btn-primary,
+            .cta {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+
+            .hero-image img,
+            .about-image img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">🛍️ DreamS</div>
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#produk">Produk</a>
+            <a href="#layanan">Layanan</a>
+            <a href="#artikel">Artikel</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+        <button class="cta">Gabung Mitra</button>
+    </header>
+
+    <main>
+
+        <section class="hero" id="beranda">
+            <div class="hero-content">
+                <h1>Belanja Produk Elektronik Terbaik di DreamS</h1>
+                <p>DreamS adalah platform e-commerce terpercaya yang menghadirkan berbagai produk elektronik, gadget,
+                    dan
+                    aksesoris berkualitas tinggi dengan harga bersaing dan pelayanan terbaik.</p>
+                <button class="btn-primary">Belanja Sekarang</button>
+            </div>
+            <div class="hero-image">
+                <img src="image/gaming.jpg" alt="E-commerce Produk">
+            </div>
+        </section>
+
+        <section class="about" id="tentang">
+            <div class="about-text">
+                <h2>Tentang DreamS</h2>
+                <p><b>DreamS</b> adalah platform e-commerce modern yang menyediakan berbagai produk teknologi dan gaya
+                    hidup
+                    digital. Kami berkomitmen menghadirkan produk terbaik dengan pelayanan cepat dan terpercaya.</p>
+                <p>Kami juga mendukung penjual lokal untuk memperluas pasar mereka secara online dengan sistem yang
+                    mudah dan aman.</p>
+            </div>
+            <div class="about-image">
+                <img src="image/setup.jpg" alt="E-Commerce DreamS">
+            </div>
+        </section>
+
+        <section class="produk" id="produk">
+            <h2>Produk Unggulan Kami</h2>
+            <p>Pilih produk favorit Anda dari koleksi gadget dan aksesoris terbaik yang kami sediakan.</p>
+
+            <div class="produk-grid">
+                <div class="produk-card">
+                    <a href="produk-laptop.html">
+                        <img src="image/laptop.jpg" alt="Laptop Premium">
+                    </a>
+                    <h3>Laptop Premium</h3>
+                    <p>Laptop berperforma tinggi untuk kebutuhan kerja dan gaming, dengan desain elegan.</p>
+                </div>
+
+                <div class="produk-card">
+                    <a href="produk-smartphone.html">
+                        <img src="image/smartphone.jpg" alt="Smartphone Canggih">
+                    </a>
+                    <h3>Smartphone Canggih</h3>
+                    <p>Smartphone terbaru dengan kamera resolusi tinggi dan daya tahan baterai luar biasa.</p>
+                </div>
+
+                <div class="produk-card">
+                    <a href="produk-headset.html">
+                        <img src="image/headset.png" alt="Headset Gaming">
+                    </a>
+                    <h3>Headset Gaming</h3>
+                    <p>Rasakan kualitas suara terbaik untuk pengalaman bermain game yang maksimal.</p>
+                </div>
+
+                <div class="produk-card">
+                    <a href="produk-keyboard.html">
+                        <img src="image/keyboard.jpg" alt="Keyboard Mekanikal">
+                    </a>
+                    <h3>Keyboard Mekanikal</h3>
+                    <p>Desain ergonomis dengan lampu RGB yang menambah semangat produktivitas Anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="layanan" id="layanan">
+            <h2>Layanan Kami</h2>
+            <div class="layanan-grid">
+                <div class="layanan-card">
+                    <div class="icon">🚚</div>
+                    <h3>Pengiriman Cepat</h3>
+                    <p>Kami bekerja sama dengan ekspedisi terpercaya untuk memastikan barang tiba tepat waktu.</p>
+                </div>
+                <div class="layanan-card">
+                    <div class="icon">💳</div>
+                    <h3>Pembayaran Aman</h3>
+                    <p>Sistem pembayaran terverifikasi untuk melindungi setiap transaksi Anda.</p>
+                </div>
+                <div class="layanan-card">
+                    <div class="icon">⭐</div>
+                    <h3>Produk Berkualitas</h3>
+                    <p>Semua produk kami telah melewati tahap pengecekan kualitas sebelum dikirim.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="artikel-section" id="artikel">
+            <div class="artikel-container">
+                <div class="artikel-left">
+                    <h2>Artikel & Tips Belanja</h2>
+
+                    <div class="artikel-grid">
+                        <article class="artikel-card">
+                            <img src="image/tips.jpg" alt="Tips Memilih Laptop">
+                            <div class="artikel-text">
+                                <h3>Cara Memilih Laptop Sesuai Kebutuhan</h3>
+                                <p>Pahami spesifikasi laptop sebelum membeli agar sesuai dengan kebutuhan kerja atau
+                                    hiburan Anda.</p>
+                                <a href="#">Baca Selengkapnya →</a>
+                            </div>
+                        </article>
+
+                        <article class="artikel-card">
+                            <img src="image/tren.png" alt="Tren Gadget 2025">
+                            <div class="artikel-text">
+                                <h3>Tren Gadget 2025 yang Wajib Kamu Tahu</h3>
+                                <p>Temukan teknologi terbaru yang sedang naik daun di tahun ini dan pelajari
+                                    keunggulannya.</p>
+                                <a href="#">Baca Selengkapnya →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="artikel-aside">
+                    <h3>🎉 Promo & Testimoni Pelanggan</h3>
+                    <ul>
+                        <li>🔥 <b>Promo Akhir Tahun:</b> Diskon hingga 40% untuk semua produk elektronik!</li>
+                        <li>💬 “Pelayanan cepat dan barangnya original. Terbaik!” — <i>Andi, Jakarta</i></li>
+                        <li>🚛 Gratis Ongkir ke seluruh Indonesia untuk pembelian di atas Rp500.000.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+
+        <section class="kontak" id="kontak">
+            <h2>Hubungi Kami</h2>
+            <p>Tim DreamS siap membantu Anda kapanpun. Silakan hubungi kami melalui kontak berikut:</p>
+            <div class="kontak-info">
+                <div>
+                    <h4>📍 Lokasi</h4>
+                    <p>Jl. Raya Teknologi No.88, Jakarta</p>
+                </div>
+                <div>
+                    <h4>📞 Telepon</h4>
+                    <p>+62 812-3456-7890</p>
+                </div>
+                <div>
+                    <h4>📧 Email</h4>
+                    <p>support@dreams-ecommerce.com</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 DreamS E-Commerce. Dibuat dengan ❤️ untuk pengalaman belanja terbaik Anda.</p>
+    </footer>
+</body>
+
+</html>
